@@ -50,18 +50,6 @@
     box-shadow: none;
 }
 
-#banner {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    width: 70%;
-    z-index: 2;
-}
-
-#banner img {
-    height: 100%;
-    width: fit-content;
-}
 
 .shape {
     background-color: var(--color-primary-2);
@@ -72,7 +60,18 @@
     top: 0;
     right: 0;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
 }
+
+.tigre {
+    max-width: 80%; /* Ajusta o tamanho do tigre conforme a largura do shape */
+    max-height: 80%; /* Garante que ele não ultrapasse os limites do shape */
+    object-fit: contain; /* Mantém a proporção da imagem */
+}
+
+
 
 @media screen and (max-width: 1170px) {
     #home {
@@ -80,11 +79,14 @@
         padding-top: 0px;
     }
 
-    #banner,
-    #banner img,
-    #home .shape {
+    
+    
+    #home .shape, .shape .tigre {
         display: none;
-    }
+    } 
+
+
+    
 
     #cta {
         width: 100%;
@@ -96,5 +98,9 @@
 @media screen and (max-width: 450px) {
     #phone_button button {
         display: none;
+    }
+    .tigre {
+        max-width: 60%;
+        max-height: 60%;
     }
 }
